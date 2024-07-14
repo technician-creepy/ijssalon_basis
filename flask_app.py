@@ -1,20 +1,20 @@
-from flask import Flask
+from flask import Flask, render_template
 # Altijd de Eerste regel
 app=Flask(__name__)
 # Hoofd route
 @app.route('/')
 def home():
-    return "Welkom op mijn eerste Flask-website"
+    return render_template("home.html")
 
 # Route voor prijzen
 @app.route('/prijzen')
 def prijzen():
-    return "Binnenkort verschijnen hier onze actuele prijzen"
+    return render_template("prijzen.html")
 
 # route voor recepten
 @app.route('/recepten')
 def recepten():
-    return "Binnenkort verschijnen hier enkele recepten"
+    return render_template("recepten.html")
 
 # Altijd de laatste 2 regels
 # Na testen debug=True vervangen met debug=False
