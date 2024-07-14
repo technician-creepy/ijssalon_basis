@@ -9,12 +9,22 @@ def home():
 # Route voor prijzen
 @app.route('/prijzen')
 def prijzen():
-    return render_template("prijzen.html")
+    items = [
+        {"product": "vanille-ijs 1 liter", "prijs": "2 euro"},
+        {"product": "chocolade-ijs 1 liter", "prijs" : "2 euro"}
+    ]
+    return render_template("prijzen.html", items=items)
 
 # route voor recepten
 @app.route('/recepten')
 def recepten():
-    return render_template("recepten.html")
+    items = [
+        {"recept": "Tiramisu di nona",
+         "img": "tiramisu.png"},
+         {"recept": "Ijstaart met chocolade",
+          "img" : "ijstaart.png"}
+    ]
+    return render_template("recepten.html", items=items)
 
 # Altijd de laatste 2 regels
 # Na testen debug=True vervangen met debug=False
